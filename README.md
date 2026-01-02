@@ -18,6 +18,8 @@ Flow:
 
 `User Input → LLM → Response`
 
+![Version 1](simple.png)
+
 ### 🔹 Version 2 — Intent-Based Routing
 
 This version introduces intent detection and conditional routing.
