@@ -1,5 +1,6 @@
 from langgraph.graph import StateGraph, MessagesState, START, END
 from ollama import Client
+from IPython.display import display, Image
 
 # langgraph node to call the LLM
 def call_llm(state: MessagesState) -> str:
@@ -35,7 +36,7 @@ def main():
     # compile the graph
     graph = graph.compile()
 
-    print(graph.get_graph().draw_ascii())
+    display(Image(graph.get_graph().draw_mermaid_png(output_file_path="simple.png")))
 
     result = graph.invoke(
         {"messages": [{"role": "user", "content": "Hello, how are you?"}]}
